@@ -6,9 +6,12 @@ import adminRoute from './src/routes/adminRoute.js';
 import userRoute from './src/routes/userRoute.js';
 
 const app = express();
+
+const origin = 'https://survey-app-frontend-red.vercel.app'
+//const origin = 'http://localhost:5173'
   
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: origin,
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE']
 };
