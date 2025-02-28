@@ -26,15 +26,15 @@ export const adminSignIn = async (req, res, next) => {
 
     res.cookie("adminAccessToken", response.accessToken, {
       httpOnly: true,
-      sameSite: "Lax",
-      secure: false,
+      sameSite: "None",
+      secure: true,
       maxAge: 15 * 60 * 1000,
     });
 
     res.cookie("adminRefreshToken", response.refreshToken, {
       httpOnly: true,
-      sameSite: "Lax",
-      secure: false,
+      sameSite: "None",
+      secure: true,
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -76,15 +76,15 @@ export const logout = (req, res, next) => {
   
   res.clearCookie("adminAccessToken", {
     httpOnly: true,
-    sameSite: "Lax",
-    secure: false, 
+    sameSite: "None",
+    secure: true, 
   });
 
   
   res.clearCookie("adminRefreshToken", {
     httpOnly: true,
-    sameSite: "Lax",
-    secure: false,  
+    sameSite: "None",
+    secure: true,  
   });
 
   

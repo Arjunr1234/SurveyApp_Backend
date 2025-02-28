@@ -164,15 +164,15 @@ export const logout = (req, res, next) => {
   
   res.clearCookie("userAccessToken", {
     httpOnly: true,
-    sameSite: "Lax",
-    secure: false, 
+    sameSite: "None",
+    secure: true, 
   });
 
   
   res.clearCookie("userRefreshToken", {
     httpOnly: true,
-    sameSite: "Lax",
-    secure: false,  
+    sameSite: "None",
+    secure: true,  
   });
 
   

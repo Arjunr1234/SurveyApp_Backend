@@ -43,8 +43,8 @@ export const verification = (role) => {
             
             res.cookie(role === "admin" ? "adminAccessToken" : "userAccessToken", newAccessToken, {
               httpOnly: true,
-              sameSite: "Lax",
-              secure: false,
+              sameSite: "None",
+              secure: true,
               maxAge: 15 * 60 * 1000, 
             });
 
